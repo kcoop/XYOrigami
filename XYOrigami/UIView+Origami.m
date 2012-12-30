@@ -190,7 +190,8 @@ static XYOrigamiTransitionState XY_Origami_Current_State = XYOrigamiTransitionSt
                         Direction:(XYOrigamiDirection)direction
                        completion:(void (^)(BOOL finished))completion
 {
-    if (XY_Origami_Current_State != XYOrigamiTransitionStateIdle) {
+    // Hacked by kcoop to allow different viewcontrollers to transition without forcing an origami reset transition first.
+    if (XY_Origami_Current_State == XYOrigamiTransitionStateUpdate) {
         return;
     }
     XY_Origami_Current_State = XYOrigamiTransitionStateUpdate;
@@ -322,7 +323,8 @@ static XYOrigamiTransitionState XY_Origami_Current_State = XYOrigamiTransitionSt
                         Direction:(XYOrigamiDirection)direction
                        completion:(void (^)(BOOL finished))completion
 {
-    if (XY_Origami_Current_State != XYOrigamiTransitionStateShow) {
+    // Hacked by kcoop to allow different viewcontrollers to transition without forcing an origami reset transition first.
+    if (XY_Origami_Current_State == XYOrigamiTransitionStateUpdate) {
         return;
     }
     
