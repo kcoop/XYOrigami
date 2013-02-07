@@ -32,8 +32,8 @@
 typedef double (^KeyframeParametricBlock)(double);
 @interface CAKeyframeAnimation (Parametric)
 
-+ (id)animationWithKeyPath:(NSString *)path 
-                  function:(KeyframeParametricBlock)block
++ (id)animationWithKeyPath:(NSString *)path
+                     block:(KeyframeParametricBlock)block
                  fromValue:(double)fromValue
                    toValue:(double)toValue;
 
